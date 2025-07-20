@@ -5,9 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gallery configuration
     const galleryImages = [
         {
+            src: 'assets/images/widok-frontowy-zewnetrzny.jpg',
+            title: 'Widok Frontowy',
+            description: 'Główny widok domu z tarasem'
+        },
+        {
             src: 'assets/images/widok-boczny-zewnetrzny.jpg',
             title: 'Widok Boczny',
             description: 'Ekskluzywna rezydencja z tarasem i balkonem'
+        },
+        {
+            src: 'assets/images/brama-wejscie.jpg',
+            title: 'Brama Wejściowa',
+            description: 'Prywatne wejście w otoczeniu lasu'
         },
         {
             src: 'assets/images/salon-kominek.jpg',
@@ -20,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'Eleganckie drewniane schody i kominek'
         },
         {
+            src: 'assets/images/sypialnia-poddasze.jpg',
+            title: 'Sypialnia na Poddaszu',
+            description: 'Przytulna sypialnia z drewnianym wykonańczeniem'
+        },
+        {
             src: 'assets/images/lazienka-wnetrze.jpg',
             title: 'Łazienka',
             description: 'Nowoczesna łazienka w stylu spa'
@@ -30,24 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'System grzewczy i piękne drewniane wykonańczenie'
         },
         {
-            src: 'assets/images/brama-wejscie.jpg',
-            title: 'Brama Wejściowa',
-            description: 'Prywatne wejście w otoczeniu lasu'
-        },
-        {
             src: 'assets/images/sciezka-lesna.jpg',
             title: 'Ścieżka Leśna',
             description: '4,134m² prywatnego lasu do eksploracji'
         },
         {
-            src: 'assets/images/sypialnia-poddasze.jpg',
-            title: 'Sypialnia na Poddaszu',
-            description: 'Przytulna sypialnia z drewnianym wykonańczeniem'
-        },
-        {
-            src: 'assets/images/widok-frontowy-zewnetrzny.jpg',
-            title: 'Widok Frontowy',
-            description: 'Główny widok domu z tarasem'
+            src: 'assets/images/map.jpg',
+            title: 'Lokalizacja na Mapie',
+            description: 'Strategiczne położenie 50km od Warszawy'
         }
     ];
     
@@ -188,11 +193,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
-                // Swipe left - next image
-                showNextImage();
-            } else {
-                // Swipe right - previous image
+                // Swipe left - previous image (right to left navigation)
                 showPreviousImage();
+            } else {
+                // Swipe right - next image (right to left navigation)
+                showNextImage();
             }
         }
     }
