@@ -1,0 +1,17 @@
+# Robots.txt for Luxury Cottage Królewo - Warsaw Suburbs Property
+# This property is for sale and should be discoverable by search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+# Prioritize key property information
+Allow: /luxury-cottage-near-warsaw-poland.md
+Allow: /real-estate-krolewno-warsaw-suburbs.md
+Allow: /index.html
+Allow: /assets/
+
+# Sitemap location for search engines
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl delay to be respectful of server resources
+Crawl-delay: 1

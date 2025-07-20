@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Leśna Rezydencja Królewo | Luksusowy Dom 50km od Warszawy | 350,000 PLN</title>
+    <meta name="description" content="Ekskluzywna nieruchomość w Królewie - 85m² domu na działce 4134m² otoczonej lasem. Prywatne sanktuarium 50km od Warszawy. Rzeka Wkra 800m. Cena do negocjacji.">
+    <meta name="keywords" content="luksusowy dom Królewo, dom na sprzedaż Mazowsze, nieruchomość blisko Warszawy, dom w lesie, ekskluzywna nieruchomość Polska">
+    <meta name="author" content="Mariusz Rudnicki">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lesna-rezydencja-krolewo.pl">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lesna-rezydencja-krolewo.pl">
+    <meta property="og:title" content="Leśna Rezydencja Królewo - Twoje Prywatne Sanktuarium">
+    <meta property="og:description" content="Odkryj ekskluzywną nieruchomość w sercu Mazowsza. 85m² luksusowego domu na działce 4134m² w otoczeniu lasu.">
+    <meta property="og:image" content="assets/images/widok-frontowy-zewnetrzny.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lesna-rezydencja-krolewo.pl">
+    <meta property="twitter:title" content="Leśna Rezydencja Królewo - Luksusowy Dom na Sprzedaż">
+    <meta property="twitter:description" content="Ekskluzywna nieruchomość 50km od Warszawy. Prywatne sanktuarium w otoczeniu lasu.">
+    <meta property="twitter:image" content="assets/images/widok-frontowy-zewnetrzny.jpg">
+    
+    <!-- Structured Data for Real Estate -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "House",
+        "name": "Leśna Rezydencja Królewo",
+        "description": "Ekskluzywny dom z działką w Królewie, 50km od Warszawy",
+        "image": ["assets/images/widok-frontowy-zewnetrzny.jpg"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Królewo",
+            "addressRegion": "Mazowieckie",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "52.7",
+            "longitude": "20.7"
+        },
+        "numberOfRooms": "3",
+        "floorSize": {
+            "@type": "QuantitativeValue",
+            "value": "85",
+            "unitCode": "MTK"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "PLN",
+            "price": "350000",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Proxima+Nova:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/luxury-styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Map Container Styles -->
+    <style>
+        .map-container {
+            height: 400px !important;
+            width: 100% !important;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #0B4F1C;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        #property-map {
+            height: 100% !important;
+            width: 100% !important;
+            z-index: 1;
+        }
+        
+        /* Financial Advantage Section Styles */
+        .financial-advantage-section {
+            background: #FAF9F6;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .financial-advantage-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0B4F1C 0%, #D4AF37 50%, #0B4F1C 100%);
+        }
+        
+        .financial-content .section-title {
+            color: #0B4F1C;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .financial-content .section-subtitle {
+            color: #D4AF37;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+        }
+        
+        .financial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .division-card, .calculator-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(11,79,28,0.1);
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .division-card:hover, .calculator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11,79,28,0.15);
+            border-color: #D4AF37;
+        }
+        
+        .division-title, .calculator-title {
+            color: #0B4F1C;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .division-visual {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .land-segment {
+            flex: 1;
+            text-align: center;
+            padding: 25px 15px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .forest-segment {
+            background: linear-gradient(135deg, #0B4F1C 0%, #2e7d32 100%);
+            color: white;
+        }
+        
+        .building-segment {
+            background: linear-gradient(135deg, #D4AF37 0%, #f9c74f 100%);
+            color: #2C2C2C;
+        }
+        
+        .segment-icon {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .segment-label {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .segment-area {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .segment-tax {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .tax-explanation {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .tax-explanation h4 {
+            color: #0B4F1C;
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .tax-comparison {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .tax-item {
+            text-align: center;
+        }
+        
+        .tax-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .tax-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #0B4F1C;
+        }
+        
+        .calculator-summary {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .summary-row:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0B4F1C 0%, #2e7d32 100%);
+            color: white;
+            margin: 15px -15px -15px -15px;
+            padding: 20px 15px;
+            border-radius: 10px;
+        }
+        
+        .summary-label {
+            color: #555;
+        }
+        
+        .summary-value {
+            font-weight: 600;
+            color: #0B4F1C;
+        }
+        
+        .summary-row:last-child .summary-label,
+        .summary-row:last-child .summary-value {
+            color: white;
+        }
+        
+        .savings-highlight-box {
+            background: linear-gradient(135deg, #D4AF37 0%, #f9c74f 100%);
+            color: #2C2C2C;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .savings-amount {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .savings-period {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .projection-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(11,79,28,0.1);
+            margin-bottom: 50px;
+        }
+        
+        .projection-title {
+            color: #0B4F1C;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        .timeline-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #D4AF37;
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-3px);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 25px rgba(212,175,55,0.2);
+        }
+        
+        .timeline-years {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #0B4F1C;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+        
+        .advantages-section {
+            background: linear-gradient(135deg, #0B4F1C 0%, #2e7d32 100%);
+            border-radius: 20px;
+            padding: 50px;
+            color: white;
+        }
+        
+        .advantages-title {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .advantages-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .advantage-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .advantage-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .advantage-title {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .advantage-desc {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .final-summary {
+            background: rgba(212,175,55,0.2);
+            border: 2px solid #D4AF37;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .summary-text {
+            font-size: 1.2rem;
+            margin: 0;
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .summary-text strong {
+            color: #D4AF37;
+        }
+        
+        @media (max-width: 1024px) {
+            .financial-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .advantages-list {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .financial-advantage-section {
+                padding: 60px 0;
+            }
+            
+            .division-card, .calculator-card, .projection-section, .advantages-section {
+                padding: 30px 25px;
+            }
+            
+            .financial-content .section-title {
+                font-size: 2rem;
+            }
+            
+            .division-visual {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <span class="loader-text">Leśna Rezydencja Królewo</span>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="luxury-nav" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2 class="brand-name">Leśna Rezydencja Królewo</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Początek</a></li>
+                <li><a href="#story" class="nav-link">Historia</a></li>
+                <li><a href="#gallery" class="nav-link">Galeria</a></li>
+                <li><a href="#features" class="nav-link">Wnętrza</a></li>
+                <li><a href="#location" class="nav-link">Lokalizacja</a></li>
+                <li><a href="#contact" class="nav-link cta-button">Umów Wizytę</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background" data-parallax="scroll">
+            <img src="assets/images/widok-frontowy-zewnetrzny.jpg" alt="Leśna Rezydencja Królewo - Widok główny" class="hero-image">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Leśna Rezydencja Królewo</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Ekskluzywna Nieruchomość Inwestycyjna • 50km od Warszawy</p>
+            <div class="hero-cta animate-fade-in-delay-2">
+                <a href="#story" class="scroll-down">
+                    <span class="scroll-text">Poznaj Szczegóły Oferty</span>
+                    <span class="scroll-arrow">↓</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-images">
+                    <img src="assets/images/widok-frontowy-zewnetrzny.jpg" alt="Widok frontowy domu" class="story-img-1" data-aos="fade-right">
+                    <img src="assets/images/brama-wejscie.jpg" alt="Brama wejściowa z ogrodzeniem" class="story-img-2" data-aos="fade-right" data-aos-delay="200">
+                </div>
+                <div class="story-content" data-aos="fade-left">
+                    <h2 class="section-title">Nieruchomość Inwestycyjna</h2>
+                    <p class="story-lead">Ekskluzywna nieruchomość mieszkalna na działce 4,134m² w otoczeniu lasu, położona strategicznie 50km od Warszawy. Unikalna okazja inwestycyjna w strefie o wysokim potencjale wzrostu wartości.</p>
+                    <div class="story-features">
+                        <div class="feature-item">
+                            <span class="feature-number">4,134</span>
+                            <span class="feature-label">m² prywatnego raju</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-number">800</span>
+                            <span class="feature-label">metrów do rzeki Wkry</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-number">50</span>
+                            <span class="feature-label">km od Warszawy</span>
+                        </div>
+                    </div>
+                    <p class="story-text">Nieruchomość o powierzchni 85m² obejmuje salon z kominkiem, 2 sypialnie, 2 łazienki oraz wydzieloną kuchnię. Bardzo dobry stan techniczny, kominkowe ogrzewanie, taras z bezpośrednim dostępem do lasu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Prezentacja Wizualna</h2>
+            <p class="section-subtitle text-center" data-aos="fade-up" data-aos-delay="100">Kompleksowy przegląd nieruchomości</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item large" data-aos="zoom-in">
+                    <img src="assets/images/widok-frontowy-zewnetrzny.jpg" alt="Widok frontowy domu" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Widok Frontowy</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/images/widok-boczny-zewnetrzny.jpg" alt="Widok boczny domu" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Widok Boczny</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/images/brama-wejscie.jpg" alt="Brama wejściowa" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Brama Wejściowa</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/images/salon-kominek.jpg" alt="Salon z kominkiem" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Salon z Kominkiem</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="assets/images/hol-glowny-schody.jpg" alt="Główny hol ze schodami" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Główny Hol</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="assets/images/sypialnia-poddasze.jpg" alt="Sypialnia na poddaszu" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Sypialnia na Poddaszu</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="assets/images/lazienka-wnetrze.jpg" alt="Łazienka" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Łazienka</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="700">
+                    <img src="assets/images/schody-wnetrze.jpg" alt="Schody wewnętrzne" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Schody Wewnętrzne</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="assets/images/sciezka-lesna.jpg" alt="Ścieżka leśna" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Ścieżka Leśna</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-cta text-center" data-aos="fade-up">
+                <button class="btn-primary" id="view-all-photos">Zobacz Wszystkie Zdjęcia</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Specyfikacja Techniczna</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🏛️</div>
+                    <h3 class="feature-title">Przestrzeń Spotkań</h3>
+                    <p class="feature-desc">26m² salonu z kominkiem<br>Serce domu, gdzie rodzą się wspomnienia</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🛏️</div>
+                    <h3 class="feature-title">Prywatne Refugium</h3>
+                    <p class="feature-desc">2 sypialnie z widokiem na las<br>Taras z dostępem do natury</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🚿</div>
+                    <h3 class="feature-title">Wellness w Domu</h3>
+                    <p class="feature-desc">2 łazienki w stylu spa<br>Codzienny luksus i relaks</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3 class="feature-title">Kulinarne Inspiracje</h3>
+                    <p class="feature-desc">Oddzielna kuchnia<br>Przestrzeń dla pasjonatów gotowania</p>
+                </div>
+            </div>
+            
+            <div class="property-specs" data-aos="fade-up">
+                <h3 class="specs-title">Szczegóły Techniczne</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-label">Powierzchnia domu</span>
+                        <span class="spec-value">85 m²</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Powierzchnia działki</span>
+                        <span class="spec-value">4,134 m²</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Liczba pokoi</span>
+                        <span class="spec-value">3</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Stan</span>
+                        <span class="spec-value">Bardzo dobry</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Ogrzewanie</span>
+                        <span class="spec-value">Kominkowe</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Otoczenie</span>
+                        <span class="spec-value">Las prywatny</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Położenie</h2>
+            <p class="section-subtitle text-center" data-aos="fade-up" data-aos-delay="100">Strategiczna lokalizacja inwestycyjna</p>
+            
+            <div class="location-grid">
+                <div class="location-map" data-aos="fade-right">
+                    <!-- Leaflet Map - No API key required -->
+                    <div class="map-container">
+                        <div id="property-map"></div>
+                    </div>
+                </div>
+                
+                <div class="location-highlights" data-aos="fade-left">
+                    <h3 class="highlights-title">Infrastruktura i Dostępność</h3>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🏞️</div>
+                        <div class="highlight-content">
+                            <h4>800m do Rzeki Wkry</h4>
+                            <p>Atrakcje rekreacyjne, wartość dodana nieruchomości</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🛒</div>
+                        <div class="highlight-content">
+                            <h4>2.5km do Jonca</h4>
+                            <p>Sklepy, usługi, wszystko czego potrzebujesz na co dzień</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🏙️</div>
+                        <div class="highlight-content">
+                            <h4>50km do Warszawy</h4>
+                            <p>Doskonałe połączenie komunikacyjne ze stolicą</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🌲</div>
+                        <div class="highlight-content">
+                            <h4>Otoczenie Lasu</h4>
+                            <p>Naturalne otoczenie, prywatność, potencjał wzrostu wartości</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Investment Section -->
+    <section id="investment" class="investment-section">
+        <div class="container">
+            <div class="investment-content text-center" data-aos="fade-up">
+                <h2 class="section-title">Oferta Inwestycyjna</h2>
+                <div class="price-display">
+                    <span class="price-amount">350,000 PLN</span>
+                    <span class="price-note">Cena do negocjacji</span>
+                </div>
+                <p class="investment-text">Konkurencyjna wycena w stosunku do rynku warszawskiego. Unikalna okazja nabycia nieruchomości o dużej powierzchni działki w lokalizacji o wysokim potencjale inwestycyjnym.</p>
+                <div class="price-per-meter">
+                    <span class="ppm-value">4,117.65 PLN/m²</span>
+                    <span class="ppm-label">Atrakcyjna wycena za metr kwadratowy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hidden Financial Advantage Section -->
+    <section id="financial-advantage" class="financial-advantage-section">
+        <div class="container">
+            <div class="financial-content" data-aos="fade-up">
+                <h2 class="section-title text-center">Ukryta Zaleta Finansowa</h2>
+                <p class="section-subtitle text-center">Klasyfikacja lasu = Oszczędności ponad 5,300 PLN rocznie</p>
+                
+                <div class="financial-grid">
+                    <div class="division-card" data-aos="fade-right">
+                        <h3 class="division-title">Podział Działki</h3>
+                        <div class="division-visual">
+                            <div class="land-segment forest-segment">
+                                <span class="segment-icon">🌲</span>
+                                <span class="segment-label">LAS</span>
+                                <span class="segment-area">3,934 m²</span>
+                                <span class="segment-tax">~0.15 PLN/m²</span>
+                            </div>
+                            <div class="land-segment building-segment">
+                                <span class="segment-icon">🏠</span>
+                                <span class="segment-label">BUDOWLANA</span>
+                                <span class="segment-area">200 m²</span>
+                                <span class="segment-tax">~1.50 PLN/m²</span>
+                            </div>
+                        </div>
+                        <div class="tax-explanation">
+                            <h4>Różnica w opodatkowaniu</h4>
+                            <div class="tax-comparison">
+                                <div class="tax-item">
+                                    <div class="tax-label">Teren leśny</div>
+                                    <div class="tax-value">590 PLN/rok</div>
+                                </div>
+                                <div class="tax-item">
+                                    <div class="tax-label">Działka budowlana</div>
+                                    <div class="tax-value">300 PLN/rok</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-card" data-aos="fade-left">
+                        <h3 class="calculator-title">Kalkulator Oszczędności</h3>
+                        <div class="calculator-summary">
+                            <div class="summary-row">
+                                <span class="summary-label">Całkowita powierzchnia:</span>
+                                <span class="summary-value">4,134 m²</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-label">Typowa działka (koszt roczny):</span>
+                                <span class="summary-value">6,201 PLN</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-label">Ta działka (koszt roczny):</span>
+                                <span class="summary-value">890 PLN</span>
+                            </div>
+                            <div class="summary-row">
+                                <span class="summary-label">Roczne oszczędności:</span>
+                                <span class="summary-value">5,311 PLN</span>
+                            </div>
+                        </div>
+                        <div class="savings-highlight-box">
+                            <span class="savings-amount">5,311 PLN</span>
+                            <span class="savings-period">oszczędności rocznie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projection-section" data-aos="fade-up">
+                    <h3 class="projection-title">Projekcja Długoterminowych Oszczędności</h3>
+                    <div class="timeline-grid">
+                        <div class="timeline-card">
+                            <div class="timeline-years">5 lat</div>
+                            <div class="timeline-amount">26,555 PLN</div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-years">10 lat</div>
+                            <div class="timeline-amount">53,110 PLN</div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-years">20 lat</div>
+                            <div class="timeline-amount">106,220 PLN</div>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-years">30 lat</div>
+                            <div class="timeline-amount">159,330 PLN</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="advantages-section" data-aos="fade-up">
+                    <h3 class="advantages-title">Dlaczego To Ważne?</h3>
+                    <div class="advantages-list">
+                        <div class="advantage-card">
+                            <span class="advantage-emoji">🏆</span>
+                            <div class="advantage-title">Unikalna Przewaga</div>
+                            <div class="advantage-desc">Większość działek płaci pełny podatek budowlany</div>
+                        </div>
+                        <div class="advantage-card">
+                            <span class="advantage-emoji">💡</span>
+                            <div class="advantage-title">Niższy TCO</div>
+                            <div class="advantage-desc">Total Cost of Ownership znacznie zredukowany</div>
+                        </div>
+                        <div class="advantage-card">
+                            <span class="advantage-emoji">🌱</span>
+                            <div class="advantage-title">Korzyści Środowiskowe</div>
+                            <div class="advantage-desc">Ochrona przyrody i zrównoważony rozwój</div>
+                        </div>
+                    </div>
+                    
+                    <div class="final-summary">
+                        <p class="summary-text">Przy cenie <strong>350,000 PLN</strong>, oszczędności <strong>5,311 PLN rocznie</strong> czynią tę nieruchomość wyjątkową inwestycją.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper" data-aos="fade-up">
+                <h2 class="section-title text-center">Kontakt w Sprawie Oferty</h2>
+                <p class="section-subtitle text-center">Umów wizytę telefonicznie w celu oględzin nieruchomości</p>
+                
+                <div class="contact-info text-center" style="max-width: 500px; margin: 0 auto;">
+                    <h3 class="contact-title">Osobisty Kontakt</h3>
+                    <div class="contact-person">
+                        <h4>Mariusz Rudnicki</h4>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <a href="tel:+48530690337" class="contact-method">
+                            <span class="method-icon">📱</span>
+                            <span class="method-text">+48 530 690 337</span>
+                        </a>
+                        
+                        <div class="contact-method">
+                            <span class="method-icon">🏡</span>
+                            <span class="method-text">Królewo, Mazowieckie</span>
+                        </div>
+                    </div>
+                    
+                    <div class="viewing-note">
+                        <p>Oględziny wyłącznie po wcześniejszym umówieniu telefonicznym</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Leśna Rezydencja Królewo. Wszelkie prawa zastrzeżone.</p>
+                <p class="footer-exclusive">Oferta inwestycyjna • Nieruchomość premium</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Theater Mode Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="">
+            <div class="modal-caption"></div>
+            <div class="modal-navigation">
+                <button class="modal-prev">‹</button>
+                <button class="modal-next">›</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/gallery-theater.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/contact-handler.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('fade-out');
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+        
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+    </script>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Initialize Leaflet Map -->
+    <script>
+        // Wait for everything to load
+        window.addEventListener('load', function() {
+            try {
+                console.log('Initializing map...');
+                
+                // Check if container exists
+                const container = document.getElementById('property-map');
+                if (!container) {
+                    console.error('Map container not found');
+                    return;
+                }
+                
+                // Initialize map - showing route from Warsaw to Królewo
+                const map = L.map('property-map', {
+                    center: [52.4, 20.9],
+                    zoom: 9,
+                    zoomControl: true
+                });
+                
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+                
+                // Warsaw marker (start point)
+                const warsawMarker = L.marker([52.237, 21.017], {
+                    icon: L.divIcon({
+                        className: 'warsaw-marker',
+                        html: '<div style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">🏙️ WARSZAWA</div>',
+                        iconSize: [120, 35],
+                        iconAnchor: [60, 17]
+                    })
+                }).addTo(map);
+                
+                // Property marker for Królewo (destination)
+                const propertyMarker = L.marker([52.68, 20.72], {
+                    icon: L.divIcon({
+                        className: 'property-marker',
+                        html: '<div style="background-color: #D4AF37; color: #0B4F1C; padding: 8px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 3px solid #0B4F1C; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">🏡 KRÓLEWO</div>',
+                        iconSize: [120, 35],
+                        iconAnchor: [60, 17]
+                    })
+                }).addTo(map);
+                
+                // Approximate driving route coordinates (simplified)
+                const routeCoordinates = [
+                    [52.237, 21.017], // Warsaw center
+                    [52.25, 20.95],   // Northwestern Warsaw
+                    [52.27, 20.88],   // A2/S8 area
+                    [52.35, 20.82],   // Route towards Płońsk
+                    [52.45, 20.78],   // Near Płońsk
+                    [52.55, 20.75],   // Approaching area
+                    [52.65, 20.73],   // Near Joniec
+                    [52.68, 20.72]    // Królewo
+                ];
+                
+                // Create the route polyline
+                const routeLine = L.polyline(routeCoordinates, {
+                    color: '#0B4F1C',
+                    weight: 4,
+                    opacity: 0.8,
+                    dashArray: '10, 5'
+                }).addTo(map);
+                
+                // Add distance markers along the route
+                const distanceMarkers = [
+                    { coords: [52.35, 20.82], distance: '25 km', time: '25 min' },
+                    { coords: [52.55, 20.75], distance: '45 km', time: '45 min' }
+                ];
+                
+                distanceMarkers.forEach(marker => {
+                    L.marker(marker.coords, {
+                        icon: L.divIcon({
+                            className: 'distance-marker',
+                            html: `<div style="background-color: rgba(11,79,28,0.9); color: white; padding: 4px 8px; border-radius: 10px; font-size: 11px; font-weight: bold;">${marker.distance}<br>${marker.time}</div>`,
+                            iconSize: [50, 30],
+                            iconAnchor: [25, 15]
+                        })
+                    }).addTo(map);
+                });
+                
+                // Add popups
+                warsawMarker.bindPopup('<b>Warszawa</b><br>Punkt startowy<br>Centrum stolicy');
+                propertyMarker.bindPopup('<b>Leśna Rezydencja Królewo</b><br>🚗 50km od Warszawy (~50 min)<br>💰 350,000 PLN • 4,134m² działka<br>🌲 Prywatny las i spokój').openPopup();
+                
+                // Add a legend
+                const legend = L.control({position: 'bottomright'});
+                legend.onAdd = function (map) {
+                    const div = L.DomUtil.create('div', 'route-legend');
+                    div.innerHTML = `
+                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 12px; line-height: 1.4;">
+                            <h4 style="margin: 0 0 10px 0; color: #0B4F1C; font-size: 14px;">🚗 Trasa z Warszawy</h4>
+                            <div style="margin-bottom: 8px;"><span style="color: #e74c3c;">●</span> Warszawa (start)</div>
+                            <div style="margin-bottom: 8px;"><span style="color: #0B4F1C;">●</span> Królewo (cel)</div>
+                            <div style="margin-bottom: 8px;"><span style="color: #0B4F1C;">---</span> Trasa (~50 km)</div>
+                            <div style="color: #666; font-size: 11px;">Czas jazdy: ~50 minut</div>
+                        </div>
+                    `;
+                    return div;
+                };
+                legend.addTo(map);
+                
+                console.log('Map initialized successfully');
+                
+            } catch (error) {
+                console.error('Error initializing map:', error);
+                document.getElementById('property-map').innerHTML = '<div style="padding: 20px; text-align: center; color: #666; border: 2px dashed #ccc; border-radius: 8px;"><p>Mapa tymczasowo niedostępna</p><p style="font-size: 0.9rem;">Królewo, Mazowieckie</p></div>';
+            }
+        });
+    </script>
+    
+</body>
+</html>
