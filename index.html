@@ -83,6 +83,17 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
+        /* Mobile map optimization */
+        @media (max-width: 768px) {
+            .map-container {
+                height: 250px !important;
+            }
+            .map-container img {
+                height: 250px !important;
+                object-fit: cover !important;
+            }
+        }
+        
         #property-map {
             height: 100% !important;
             width: 100% !important;
