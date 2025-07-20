@@ -11,18 +11,18 @@
     <meta name="keywords" content="luksusowy dom Królewo, dom na sprzedaż Mazowsze, nieruchomość blisko Warszawy, dom w lesie, ekskluzywna nieruchomość Polska">
     <meta name="author" content="Mariusz Rudnicki">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lesna-rezydencja-krolewo.pl">
+    <link rel="canonical" href="https://krolewojoiniec.pl">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lesna-rezydencja-krolewo.pl">
+    <meta property="og:url" content="https://krolewojoiniec.pl">
     <meta property="og:title" content="Leśna Rezydencja Królewo - Twoje Prywatne Sanktuarium">
     <meta property="og:description" content="Odkryj ekskluzywną nieruchomość w sercu Mazowsza. 85m² luksusowego domu na działce 4134m² w otoczeniu lasu.">
     <meta property="og:image" content="assets/images/widok-frontowy-zewnetrzny.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://lesna-rezydencja-krolewo.pl">
+    <meta property="twitter:url" content="https://krolewojoiniec.pl">
     <meta property="twitter:title" content="Leśna Rezydencja Królewo - Luksusowy Dom na Sprzedaż">
     <meta property="twitter:description" content="Ekskluzywna nieruchomość 50km od Warszawy. Prywatne sanktuarium w otoczeniu lasu.">
     <meta property="twitter:image" content="assets/images/widok-frontowy-zewnetrzny.jpg">
@@ -43,8 +43,8 @@
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "52.7",
-            "longitude": "20.7"
+            "latitude": "52.635278",
+            "longitude": "20.562222"
         },
         "numberOfRooms": "3",
         "floorSize": {
@@ -71,10 +71,6 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
-          crossorigin=""/>
     
     <!-- Map Container Styles -->
     <style>
@@ -469,6 +465,38 @@
                 gap: 15px;
             }
         }
+        
+        /* Commission-free styling */
+        .commission-note {
+            display: block;
+            background: #D4AF37;
+            color: #0B4F1C;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+            border: 2px solid #0B4F1C;
+        }
+        
+        .owner-note {
+            color: #D4AF37;
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            font-weight: bold;
+        }
+        
+        /* Hero subtitle enhancement */
+        .hero-subtitle {
+            font-weight: bold !important;
+            font-size: 1.3rem !important;
+        }
+        
+        .commission-highlight {
+            color: #FFFFFF !important;
+            font-size: 1.7rem !important;
+            font-weight: 900 !important;
+        }
     </style>
     
     <!-- Favicon -->
@@ -512,7 +540,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title animate-fade-in">Leśna Rezydencja Królewo</h1>
-            <p class="hero-subtitle animate-fade-in-delay">Ekskluzywna Nieruchomość Inwestycyjna • 50km od Warszawy</p>
+            <p class="hero-subtitle animate-fade-in-delay">Ekskluzywna Nieruchomość Inwestycyjna • 50km od Warszawy • <span class="commission-highlight">Sprzedaż bez prowizji</span></p>
             <div class="hero-cta animate-fade-in-delay-2">
                 <a href="#story" class="scroll-down">
                     <span class="scroll-text">Poznaj Szczegóły Oferty</span>
@@ -642,8 +670,8 @@
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">🚿</div>
-                    <h3 class="feature-title">Wellness w Domu</h3>
-                    <p class="feature-desc">2 łazienki w stylu spa<br>Codzienny luksus i relaks</p>
+                    <h3 class="feature-title">Strefa Relaksu</h3>
+                    <p class="feature-desc">2 łazienki<br>Komfort bez oczekiwania - luksus w domku</p>
                 </div>
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
@@ -695,7 +723,9 @@
                 <div class="location-map" data-aos="fade-right">
                     <!-- Leaflet Map - No API key required -->
                     <div class="map-container">
-                        <div id="property-map"></div>
+                        <img src="assets/images/map.jpg" 
+                             alt="Mapa trasy Warszawa-Królewo" 
+                             style="width: 100%; height: 400px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     </div>
                 </div>
                 
@@ -746,12 +776,9 @@
                 <div class="price-display">
                     <span class="price-amount">350,000 PLN</span>
                     <span class="price-note">Cena do negocjacji</span>
+                    <span class="commission-note">Sprzedaż bez prowizji</span>
                 </div>
                 <p class="investment-text">Konkurencyjna wycena w stosunku do rynku warszawskiego. Unikalna okazja nabycia nieruchomości o dużej powierzchni działki w lokalizacji o wysokim potencjale inwestycyjnym.</p>
-                <div class="price-per-meter">
-                    <span class="ppm-value">4,117.65 PLN/m²</span>
-                    <span class="ppm-label">Atrakcyjna wycena za metr kwadratowy</span>
-                </div>
             </div>
         </div>
     </section>
@@ -761,7 +788,7 @@
         <div class="container">
             <div class="financial-content" data-aos="fade-up">
                 <h2 class="section-title text-center">Ukryta Zaleta Finansowa</h2>
-                <p class="section-subtitle text-center">Klasyfikacja lasu = Oszczędności ponad 5,300 PLN rocznie</p>
+                <p class="section-subtitle text-center">Klasyfikacja lasu = Oszczędności ponad 5,400 PLN rocznie</p>
                 
                 <div class="financial-grid">
                     <div class="division-card" data-aos="fade-right">
@@ -771,25 +798,33 @@
                                 <span class="segment-icon">🌲</span>
                                 <span class="segment-label">LAS</span>
                                 <span class="segment-area">3,934 m²</span>
-                                <span class="segment-tax">~0.15 PLN/m²</span>
+                                <span class="segment-tax">0.006 PLN/m²</span>
                             </div>
                             <div class="land-segment building-segment">
                                 <span class="segment-icon">🏠</span>
                                 <span class="segment-label">BUDOWLANA</span>
                                 <span class="segment-area">200 m²</span>
-                                <span class="segment-tax">~1.50 PLN/m²</span>
+                                <span class="segment-tax">0.70 PLN/m²</span>
                             </div>
                         </div>
                         <div class="tax-explanation">
                             <h4>Różnica w opodatkowaniu</h4>
                             <div class="tax-comparison">
                                 <div class="tax-item">
-                                    <div class="tax-label">Teren leśny</div>
-                                    <div class="tax-value">590 PLN/rok</div>
+                                    <div class="tax-label">Działka budowlana (200m²)</div>
+                                    <div class="tax-value">140 PLN/rok</div>
                                 </div>
                                 <div class="tax-item">
-                                    <div class="tax-label">Działka budowlana</div>
-                                    <div class="tax-value">300 PLN/rok</div>
+                                    <div class="tax-label">Budynek (48m²)</div>
+                                    <div class="tax-value">551 PLN/rok</div>
+                                </div>
+                                <div class="tax-item">
+                                    <div class="tax-label">Las (3,934m²)</div>
+                                    <div class="tax-value">24 PLN/rok</div>
+                                </div>
+                                <div class="tax-item" style="border-top: 2px solid #0B4F1C; margin-top: 10px; padding-top: 10px; font-weight: bold;">
+                                    <div class="tax-label">SUMA ROCZNA</div>
+                                    <div class="tax-value">715 PLN/rok</div>
                                 </div>
                             </div>
                         </div>
@@ -808,15 +843,15 @@
                             </div>
                             <div class="summary-row">
                                 <span class="summary-label">Ta działka (koszt roczny):</span>
-                                <span class="summary-value">890 PLN</span>
+                                <span class="summary-value">715 PLN</span>
                             </div>
                             <div class="summary-row">
                                 <span class="summary-label">Roczne oszczędności:</span>
-                                <span class="summary-value">5,311 PLN</span>
+                                <span class="summary-value">5,486 PLN</span>
                             </div>
                         </div>
                         <div class="savings-highlight-box">
-                            <span class="savings-amount">5,311 PLN</span>
+                            <span class="savings-amount">5,486 PLN</span>
                             <span class="savings-period">oszczędności rocznie</span>
                         </div>
                     </div>
@@ -827,19 +862,19 @@
                     <div class="timeline-grid">
                         <div class="timeline-card">
                             <div class="timeline-years">5 lat</div>
-                            <div class="timeline-amount">26,555 PLN</div>
+                            <div class="timeline-amount">27,430 PLN</div>
                         </div>
                         <div class="timeline-card">
                             <div class="timeline-years">10 lat</div>
-                            <div class="timeline-amount">53,110 PLN</div>
+                            <div class="timeline-amount">54,860 PLN</div>
                         </div>
                         <div class="timeline-card">
                             <div class="timeline-years">20 lat</div>
-                            <div class="timeline-amount">106,220 PLN</div>
+                            <div class="timeline-amount">109,720 PLN</div>
                         </div>
                         <div class="timeline-card">
                             <div class="timeline-years">30 lat</div>
-                            <div class="timeline-amount">159,330 PLN</div>
+                            <div class="timeline-amount">164,580 PLN</div>
                         </div>
                     </div>
                 </div>
@@ -854,8 +889,8 @@
                         </div>
                         <div class="advantage-card">
                             <span class="advantage-emoji">💡</span>
-                            <div class="advantage-title">Niższy TCO</div>
-                            <div class="advantage-desc">Total Cost of Ownership znacznie zredukowany</div>
+                            <div class="advantage-title">Niższe Koszty Utrzymania</div>
+                            <div class="advantage-desc">Całkowite koszty posiadania znacznie zredukowane</div>
                         </div>
                         <div class="advantage-card">
                             <span class="advantage-emoji">🌱</span>
@@ -865,7 +900,7 @@
                     </div>
                     
                     <div class="final-summary">
-                        <p class="summary-text">Przy cenie <strong>350,000 PLN</strong>, oszczędności <strong>5,311 PLN rocznie</strong> czynią tę nieruchomość wyjątkową inwestycją.</p>
+                        <p class="summary-text">Przy cenie <strong>350,000 PLN</strong>, oszczędności <strong>5,486 PLN rocznie</strong> czynią tę nieruchomość wyjątkową inwestycją.</p>
                     </div>
                 </div>
             </div>
@@ -883,6 +918,7 @@
                     <h3 class="contact-title">Osobisty Kontakt</h3>
                     <div class="contact-person">
                         <h4>Mariusz Rudnicki</h4>
+                        <p class="owner-note">Sprzedaż bez prowizji</p>
                     </div>
                     
                     <div class="contact-methods">
@@ -911,12 +947,12 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2024 Leśna Rezydencja Królewo. Wszelkie prawa zastrzeżone.</p>
-                <p class="footer-exclusive">Oferta inwestycyjna • Nieruchomość premium</p>
+                <p class="footer-exclusive">Oferta inwestycyjna • Nieruchomość ekskluzywna</p>
             </div>
         </div>
     </footer>
     
-    <!-- Theater Mode Gallery Modal -->
+    <!-- Tryb Kinowy Galerii -->
     <div id="gallery-modal" class="gallery-modal">
         <span class="modal-close">&times;</span>
         <div class="modal-content">
@@ -967,124 +1003,6 @@
         });
     </script>
     
-    <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin=""></script>
-    
-    <!-- Initialize Leaflet Map -->
-    <script>
-        // Wait for everything to load
-        window.addEventListener('load', function() {
-            try {
-                console.log('Initializing map...');
-                
-                // Check if container exists
-                const container = document.getElementById('property-map');
-                if (!container) {
-                    console.error('Map container not found');
-                    return;
-                }
-                
-                // Initialize map - showing route from Warsaw to Królewo
-                const map = L.map('property-map', {
-                    center: [52.4, 20.9],
-                    zoom: 9,
-                    zoomControl: true
-                });
-                
-                // Add OpenStreetMap tiles
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    attribution: '© OpenStreetMap contributors'
-                }).addTo(map);
-                
-                // Warsaw marker (start point)
-                const warsawMarker = L.marker([52.237, 21.017], {
-                    icon: L.divIcon({
-                        className: 'warsaw-marker',
-                        html: '<div style="background-color: #e74c3c; color: white; padding: 8px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">🏙️ WARSZAWA</div>',
-                        iconSize: [120, 35],
-                        iconAnchor: [60, 17]
-                    })
-                }).addTo(map);
-                
-                // Property marker for Królewo (destination)
-                const propertyMarker = L.marker([52.68, 20.72], {
-                    icon: L.divIcon({
-                        className: 'property-marker',
-                        html: '<div style="background-color: #D4AF37; color: #0B4F1C; padding: 8px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 3px solid #0B4F1C; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">🏡 KRÓLEWO</div>',
-                        iconSize: [120, 35],
-                        iconAnchor: [60, 17]
-                    })
-                }).addTo(map);
-                
-                // Approximate driving route coordinates (simplified)
-                const routeCoordinates = [
-                    [52.237, 21.017], // Warsaw center
-                    [52.25, 20.95],   // Northwestern Warsaw
-                    [52.27, 20.88],   // A2/S8 area
-                    [52.35, 20.82],   // Route towards Płońsk
-                    [52.45, 20.78],   // Near Płońsk
-                    [52.55, 20.75],   // Approaching area
-                    [52.65, 20.73],   // Near Joniec
-                    [52.68, 20.72]    // Królewo
-                ];
-                
-                // Create the route polyline
-                const routeLine = L.polyline(routeCoordinates, {
-                    color: '#0B4F1C',
-                    weight: 4,
-                    opacity: 0.8,
-                    dashArray: '10, 5'
-                }).addTo(map);
-                
-                // Add distance markers along the route
-                const distanceMarkers = [
-                    { coords: [52.35, 20.82], distance: '25 km', time: '25 min' },
-                    { coords: [52.55, 20.75], distance: '45 km', time: '45 min' }
-                ];
-                
-                distanceMarkers.forEach(marker => {
-                    L.marker(marker.coords, {
-                        icon: L.divIcon({
-                            className: 'distance-marker',
-                            html: `<div style="background-color: rgba(11,79,28,0.9); color: white; padding: 4px 8px; border-radius: 10px; font-size: 11px; font-weight: bold;">${marker.distance}<br>${marker.time}</div>`,
-                            iconSize: [50, 30],
-                            iconAnchor: [25, 15]
-                        })
-                    }).addTo(map);
-                });
-                
-                // Add popups
-                warsawMarker.bindPopup('<b>Warszawa</b><br>Punkt startowy<br>Centrum stolicy');
-                propertyMarker.bindPopup('<b>Leśna Rezydencja Królewo</b><br>🚗 50km od Warszawy (~50 min)<br>💰 350,000 PLN • 4,134m² działka<br>🌲 Prywatny las i spokój').openPopup();
-                
-                // Add a legend
-                const legend = L.control({position: 'bottomright'});
-                legend.onAdd = function (map) {
-                    const div = L.DomUtil.create('div', 'route-legend');
-                    div.innerHTML = `
-                        <div style="background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 12px; line-height: 1.4;">
-                            <h4 style="margin: 0 0 10px 0; color: #0B4F1C; font-size: 14px;">🚗 Trasa z Warszawy</h4>
-                            <div style="margin-bottom: 8px;"><span style="color: #e74c3c;">●</span> Warszawa (start)</div>
-                            <div style="margin-bottom: 8px;"><span style="color: #0B4F1C;">●</span> Królewo (cel)</div>
-                            <div style="margin-bottom: 8px;"><span style="color: #0B4F1C;">---</span> Trasa (~50 km)</div>
-                            <div style="color: #666; font-size: 11px;">Czas jazdy: ~50 minut</div>
-                        </div>
-                    `;
-                    return div;
-                };
-                legend.addTo(map);
-                
-                console.log('Map initialized successfully');
-                
-            } catch (error) {
-                console.error('Error initializing map:', error);
-                document.getElementById('property-map').innerHTML = '<div style="padding: 20px; text-align: center; color: #666; border: 2px dashed #ccc; border-radius: 8px;"><p>Mapa tymczasowo niedostępna</p><p style="font-size: 0.9rem;">Królewo, Mazowieckie</p></div>';
-            }
-        });
-    </script>
     
 </body>
 </html>
