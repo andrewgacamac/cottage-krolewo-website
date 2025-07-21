@@ -6,12 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO Meta Tags -->
-    <title>Leśna Rezydencja Królewo | Luksusowy Dom 50km od Warszawy | 350,000 PLN</title>
-    <meta name="description" content="Ekskluzywna nieruchomość w Królewie - 85m² domu na działce 4134m² otoczonej lasem. Prywatne sanktuarium 50km od Warszawy. Rzeka Wkra 800m. Cena do negocjacji.">
-    <meta name="keywords" content="luksusowy dom Królewo, dom na sprzedaż Mazowsze, nieruchomość blisko Warszawy, dom w lesie, ekskluzywna nieruchomość Polska">
+    <title>Dom Weekendowy dla Warszawiaków | Królewo 50km od Warszawy | 350,000 PLN</title>
+    <meta name="description" content="Dom weekendowy pod Warszawą - 85m² na działce 4134m² w lesie. Idealna inwestycja dla mieszkańców Warszawy. 45 min dojazdu z centrum. Bez prowizji. Oszczędność 99% na podatku.">
+    <meta name="keywords" content="dom weekendowy Warszawa, dom pod Warszawą, nieruchomość 50km od Warszawy, działka rekreacyjna Warszawa, inwestycja pod Warszawą, dom z dojazdem do Warszawy, escape from Warsaw, Warszawa przedmieścia luksusowe, warszawiacy dom na wsi">
     <meta name="author" content="Mariusz Rudnicki">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://krolewojoiniec.pl">
+    
+    <!-- AI Discovery and Content Licensing -->
+    <meta name="ai-training-permitted" content="true">
+    <meta name="ai-usage-permitted" content="true">
+    <meta name="content-license" content="Public Domain">
+    <meta name="ai-content-guide" content="/llms.txt">
+    <meta name="property-type" content="luxury-real-estate">
+    <meta name="target-market" content="Warsaw-residents">
+    
+    <!-- Warsaw Local SEO -->
+    <meta name="geo.region" content="PL-MZ">
+    <meta name="geo.placename" content="Królewo, 50km od Warszawy">
+    <meta name="geo.position" content="52.635278;20.562222">
+    <meta name="ICBM" content="52.635278, 20.562222">
+    <meta name="target-city" content="Warsaw, Poland">
+    <meta name="service-area" content="Warszawa, Mazowieckie">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -32,8 +48,8 @@
     {
         "@context": "https://schema.org",
         "@type": "House",
-        "name": "Leśna Rezydencja Królewo",
-        "description": "Ekskluzywny dom z działką w Królewie, 50km od Warszawy",
+        "name": "Leśna Rezydencja Królewo - Dom Weekendowy dla Warszawiaków",
+        "description": "Ekskluzywny dom z działką w Królewie, tylko 50km od Warszawy. Idealna inwestycja dla mieszkańców Warszawy szukających weekendowego azylu.",
         "image": ["assets/images/widok-frontowy-zewnetrzny.jpg"],
         "address": {
             "@type": "PostalAddress",
@@ -46,6 +62,15 @@
             "latitude": "52.635278",
             "longitude": "20.562222"
         },
+        "areaServed": {
+            "@type": "City",
+            "name": "Warszawa",
+            "@id": "https://www.wikidata.org/wiki/Q270",
+            "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": "Mazowieckie"
+            }
+        },
         "numberOfRooms": "3",
         "floorSize": {
             "@type": "QuantitativeValue",
@@ -56,8 +81,21 @@
             "@type": "Offer",
             "priceCurrency": "PLN",
             "price": "350000",
-            "availability": "https://schema.org/InStock"
-        }
+            "availability": "https://schema.org/InStock",
+            "description": "Bez prowizji! Idealna lokalizacja dla mieszkańców Warszawy."
+        },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Odległość od Warszawy",
+                "value": "50 km"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Czas dojazdu z Warszawy",
+                "value": "45-60 minut"
+            }
+        ]
     }
     </script>
     
@@ -70,6 +108,13 @@
     <link rel="stylesheet" href="css/luxury-styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- SEO and AI Discovery Links -->
+    <link rel="alternate" href="luxury-cottage-near-warsaw-poland.md" type="text/markdown" title="Property Description">
+    <link rel="alternate" href="real-estate-krolewno-warsaw-suburbs.md" type="text/markdown" title="Location Information">
+    <link rel="alternate" href="llms-txt-file.md" type="text/markdown" title="AI Content Guide">
+    <link rel="alternate" href="llms.txt" type="text/plain" title="LLMs Content Guide">
+    <link rel="related" href="structured-data-schema.html" type="text/html" title="Structured Data Schema">
     
     
     <!-- Map Container Styles -->
@@ -503,6 +548,13 @@
             font-size: 1.3rem !important;
         }
         
+        /* Hero commission line */
+        .hero-commission {
+            margin-top: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
         .commission-highlight {
             color: #FFFFFF !important;
             font-size: 1.9rem !important;
@@ -533,6 +585,7 @@
                 <li><a href="#gallery" class="nav-link">Galeria</a></li>
                 <li><a href="#features" class="nav-link">Wnętrza</a></li>
                 <li><a href="#location" class="nav-link">Lokalizacja</a></li>
+                <li><a href="#warsaw-commute" class="nav-link">Z Warszawy</a></li>
                 <li><a href="#contact" class="nav-link cta-button">Umów Wizytę</a></li>
             </ul>
             <div class="mobile-menu-toggle">
@@ -550,8 +603,9 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Leśna Rezydencja Królewo</h1>
-            <p class="hero-subtitle animate-fade-in-delay">Ekskluzywna Nieruchomość Inwestycyjna • 50km od Warszawy • <span class="commission-highlight">Sprzedaż bez prowizji</span></p>
+            <h1 class="hero-title animate-fade-in">Twój Dom Weekendowy pod Warszawą</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Ucieczka od Warszawskiego Zgiełku • 45 min z Centrum</p>
+            <p class="hero-commission animate-fade-in-delay-2"><span class="commission-highlight">Bez Prowizji</span></p>
             <div class="hero-cta animate-fade-in-delay-2">
                 <a href="#story" class="scroll-down">
                     <span class="scroll-text">Poznaj Szczegóły Oferty</span>
@@ -586,7 +640,7 @@
                             <span class="feature-label">km od Warszawy</span>
                         </div>
                     </div>
-                    <p class="story-text">Nieruchomość o powierzchni 85m² obejmuje salon z kominkiem, 2 sypialnie, 2 łazienki oraz wydzieloną kuchnię. Bardzo dobry stan techniczny, kominkowe ogrzewanie, taras z bezpośrednim dostępem do lasu.</p>
+                    <p class="story-text">Idealna propozycja dla warszawiaków szukających weekendowego azylu. Dom o powierzchni 85m² oferuje wszystko, czego potrzeba do komfortowego wypoczynku z dala od miejskiego zgiełku - salon z kominkiem, 2 sypialnie, 2 łazienki oraz przestronną kuchnię. Tylko 45 minut jazdy z Warszawy!</p>
                 </div>
             </div>
         </div>
@@ -785,6 +839,161 @@
         </div>
     </section>
     
+    <!-- Warsaw Commuter Section -->
+    <section id="warsaw-commute" class="warsaw-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Dojazd z Warszawy</h2>
+            <p class="section-subtitle text-center" data-aos="fade-up" data-aos-delay="100">Twój weekendowy azyl tylko godzinę od centrum</p>
+            
+            <div class="commute-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="commute-card">
+                    <h3>🚗 Z Centrum Warszawy</h3>
+                    <ul>
+                        <li><strong>Czas:</strong> 45-60 min</li>
+                        <li><strong>Trasa:</strong> DK7 przez Łomianki</li>
+                        <li><strong>Dystans:</strong> 50 km</li>
+                        <li><strong>Bez korków:</strong> Weekend 40 min</li>
+                    </ul>
+                </div>
+                
+                <div class="commute-card">
+                    <h3>🏢 Z Mokotowa/Wilanowa</h3>
+                    <ul>
+                        <li><strong>Czas:</strong> 55-70 min</li>
+                        <li><strong>Trasa:</strong> S7 → DK7</li>
+                        <li><strong>Dystans:</strong> 58 km</li>
+                        <li><strong>Parking:</strong> Na miejscu</li>
+                    </ul>
+                </div>
+                
+                <div class="commute-card">
+                    <h3>🚆 Transport Publiczny</h3>
+                    <ul>
+                        <li><strong>PKP:</strong> Warszawa → Ciechanów</li>
+                        <li><strong>Przystanek:</strong> Królewo (2 km)</li>
+                        <li><strong>Taxi/Uber:</strong> ~150-200 PLN</li>
+                        <li><strong>BlaBlaCar:</strong> Popularna trasa</li>
+                    </ul>
+                </div>
+                
+                <div class="commute-card">
+                    <h3>🌟 Zalety dla Warszawiaków</h3>
+                    <ul>
+                        <li>Ucieczka od miejskiego zgiełku</li>
+                        <li>Czyste powietrze (brak smogu)</li>
+                        <li>Praca zdalna w otoczeniu natury</li>
+                        <li>Inwestycja tańsza niż mieszkanie w Warszawie</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="warsaw-comparison" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="comparison-title">Porównanie z Warszawą</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <span class="comparison-label">Cena za m² działki:</span>
+                        <span class="comparison-value">84 PLN vs 3,000+ PLN (Warszawa)</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Wielkość działki:</span>
+                        <span class="comparison-value">4,134 m² vs 500 m² (typowa w Warszawie)</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Podatek od nieruchomości:</span>
+                        <span class="comparison-value">164 PLN/rok vs 5,540 PLN (działka biznesowa)</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="comparison-label">Jakość powietrza:</span>
+                        <span class="comparison-value">Doskonała vs Smog (Warszawa)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .warsaw-section {
+            padding: 80px 0;
+            background: #FAF9F6;
+        }
+        
+        .commute-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .commute-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .commute-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .commute-card h3 {
+            color: #0B4F1C;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .commute-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .commute-card li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .warsaw-comparison {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-title {
+            color: #0B4F1C;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .comparison-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-label {
+            color: #666;
+        }
+        
+        .comparison-value {
+            color: #0B4F1C;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .commute-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
     <!-- Investment Section -->
     <section id="investment" class="investment-section">
         <div class="container">
@@ -965,6 +1174,16 @@
             <div class="footer-content">
                 <p>&copy; 2024 Leśna Rezydencja Królewo. Wszelkie prawa zastrzeżone.</p>
                 <p class="footer-exclusive">Oferta inwestycyjna • Nieruchomość ekskluzywna</p>
+                
+                <!-- Resource Links for SEO and AI Discovery -->
+                <div class="footer-resources">
+                    <small style="color: #888; font-size: 12px;">
+                        Dodatkowe informacje: 
+                        <a href="luxury-cottage-near-warsaw-poland.md" style="color: #888;">Opis</a> • 
+                        <a href="real-estate-krolewno-warsaw-suburbs.md" style="color: #888;">Lokalizacja</a> • 
+                        <a href="llms.txt" style="color: #888;">AI Guide</a>
+                    </small>
+                </div>
             </div>
         </div>
     </footer>
