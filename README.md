@@ -1,4 +1,4 @@
-# Leśna Rezydencja Królewo - Luxury Property Website
+# Rezydencja Leśna Królewo - Luxury Property Website
 
 A premium single-page website showcasing an exclusive property for sale in Królewo, Poland.
 

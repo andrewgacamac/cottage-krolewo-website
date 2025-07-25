@@ -1,5 +1,5 @@
 // Parallax Effects
-// Leśna Rezydencja Królewo
+// Rezydencja Leśna Królewo
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if user prefers reduced motion

@@ -1,5 +1,5 @@
 // Contact Form Handler
-// Leśna Rezydencja Królewo
+// Rezydencja Leśna Królewo
 
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('luxury-contact-form');
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             phone: phoneField.value.trim(),
             email: emailField.value.trim(),
             message: messageField.value.trim(),
-            property: 'Leśna Rezydencja Królewo',
+            property: 'Rezydencja Leśna Królewo',
             propertyId: '3223152',
             timestamp: new Date().toISOString()
         };

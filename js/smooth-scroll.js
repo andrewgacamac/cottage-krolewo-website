@@ -1,5 +1,5 @@
 // Smooth Scroll Navigation
-// Leśna Rezydencja Królewo
+// Rezydencja Leśna Królewo
 
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for navigation links

@@ -1,5 +1,5 @@
 // Gallery Theater Mode
-// Leśna Rezydencja Królewo
+// Rezydencja Leśna Królewo
 
 document.addEventListener('DOMContentLoaded', function() {
     // Gallery configuration
